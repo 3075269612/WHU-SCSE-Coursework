@@ -63,9 +63,13 @@ def resolution():
                         print('归结式：' + ' v '.join(father) + ' v ' + ' v '.join(mother))
 
 def main():
-    filePath = 'S.txt'
-    
-    # 为了保证代码独立运行，自动生成 S.txt 提供推理约束文件
+    filePath = os.path.join('data', 'S.txt')
+
+    # 为了保证代码独立运行，自动生成 data/S.txt 提供推理约束文件
+    dirpath = os.path.dirname(filePath)
+    if dirpath and not os.path.exists(dirpath):
+        os.makedirs(dirpath, exist_ok=True)
+
     if not os.path.exists(filePath):
         with open(filePath, 'w', encoding='utf-8') as f:
             f.write("~P v Q\n")

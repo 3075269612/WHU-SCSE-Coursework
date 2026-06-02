@@ -1,5 +1,0 @@
-~P v Q
-~U v ~T v P
-U
-T
-~Q
