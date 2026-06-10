@@ -1,0 +1,61 @@
+{
+  "total_rows": 5171,
+  "class_counts": {
+    "ham": 4518,
+    "spam": 653
+  },
+  "cleaning": {
+    "rows_before": 5574,
+    "rows_after": 5171,
+    "missing_before": 0,
+    "missing_after": 0,
+    "duplicates_removed": 403
+  },
+  "splits": {
+    "train": {
+      "rows": 3102,
+      "class_counts": {
+        "ham": 2710,
+        "spam": 392
+      }
+    },
+    "val": {
+      "rows": 1034,
+      "class_counts": {
+        "ham": 904,
+        "spam": 130
+      }
+    },
+    "test": {
+      "rows": 1035,
+      "class_counts": {
+        "ham": 904,
+        "spam": 131
+      }
+    }
+  },
+  "text_length": {
+    "mean": 79.33243086443628,
+    "median": 61.0,
+    "max": 910,
+    "min": 2
+  },
+  "tfidf": {
+    "vocabulary_size": 2720,
+    "max_features": 5000,
+    "ngram_range": [
+      1,
+      1
+    ],
+    "fit_on": "train only",
+    "transform_on": [
+      "val",
+      "test"
+    ]
+  },
+  "figures": {
+    "label_distribution": "figures\\label_distribution.png",
+    "message_length_distribution": "figures\\message_length_distribution.png",
+    "top_terms": "figures\\top_terms.png"
+  }
+}

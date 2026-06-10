@@ -1,0 +1,43 @@
+project:
+  name: sms_spam_classification
+  seed: 42
+  python: D:\Python\python.exe
+
+data:
+  raw_zip: data/raw/sms_spam_collection.zip
+  raw_file: data/raw/SMSSpamCollection
+  dataset_csv: data/processed/sms_spam.csv
+  train_csv: data/processed/train.csv
+  val_csv: data/processed/val.csv
+  test_csv: data/processed/test.csv
+  test_size: 0.2
+  val_size_from_train_val: 0.25
+
+features:
+  max_features: 2000
+  ngram_min: 1
+  ngram_max: 2
+  min_df: 2
+  sublinear_tf: true
+
+model:
+  hidden_dims: [128, 64]
+  dropout: 0.3
+  batch_size: 64
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 8
+  use_class_weights: true
+
+experiments:
+  learning_rates: [0.1, 0.01, 0.001, 0.0001]
+  dropouts: [0.1, 0.3, 0.5]
+  hidden_dims: [[32], [64], [128], [128, 64]]
+  tfidf_max_features: [1000, 2000, 5000]
+  tfidf_ngram_ranges: [[1, 1], [1, 2], [1, 3]]
+
+outputs:
+  results_dir: results
+  figures_dir: figures
+  report_dir: report

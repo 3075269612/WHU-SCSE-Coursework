@@ -1,0 +1,104 @@
+{
+  "project": "垃圾短信识别",
+  "student": {
+    "name": "王李明",
+    "id": "2024302181194"
+  },
+  "environment": {
+    "python_executable": "D:\\Python\\python.exe",
+    "python_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch_version": "2.10.0+cpu",
+    "device": "cpu"
+  },
+  "config": {
+    "seed": 42,
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "weight_decay": 0.0001,
+    "use_class_weights": true,
+    "class_weights": [
+      0.5723247528076172,
+      3.956632614135742
+    ],
+    "tfidf_max_features": 5000,
+    "tfidf_ngram_range": [
+      1,
+      1
+    ]
+  },
+  "selection": {
+    "selected_learning_rate": 0.0001,
+    "selected_dropout": 0.1,
+    "selected_hidden_dims": [
+      128,
+      64
+    ],
+    "selected_max_features": 5000,
+    "selected_ngram_range": [
+      1,
+      1
+    ],
+    "criterion": "best validation macro_f1",
+    "test_uses": "best validation checkpoint"
+  },
+  "dataset_summary_file": "results/dataset_summary.json",
+  "baseline_file": "results/baselines.csv",
+  "hyperparams_file": "results/hyperparams.csv",
+  "model_selection_file": "results/model_selection.csv",
+  "tfidf_sensitivity_file": "results/tfidf_sensitivity.csv",
+  "training_history_file": "results/training_history.csv",
+  "figures": {
+    "training_curve": "figures/training_curve.png",
+    "confusion_matrix": "figures/confusion_matrix.png",
+    "lr_sensitivity": "figures/lr_sensitivity.png",
+    "dropout_sensitivity": "figures/dropout_sensitivity.png",
+    "hidden_dims_sensitivity": "figures/hidden_dims_sensitivity.png",
+    "tfidf_sensitivity": "figures/tfidf_sensitivity.png",
+    "label_distribution": "figures\\label_distribution.png",
+    "message_length_distribution": "figures\\message_length_distribution.png",
+    "top_terms": "figures\\top_terms.png"
+  },
+  "mlp": {
+    "validation": {
+      "accuracy": 0.9806576402321083,
+      "macro_f1": 0.9557154481990664,
+      "macro_precision": 0.9587731098233996,
+      "macro_recall": 0.9527144315861129
+    },
+    "final_epoch_validation": {
+      "accuracy": 0.9806576402321083,
+      "macro_f1": 0.9557154481990664,
+      "macro_precision": 0.9587731098233996,
+      "macro_recall": 0.9527144315861129
+    },
+    "test": {
+      "accuracy": 0.970048309178744,
+      "macro_f1": 0.9324868856012003,
+      "macro_precision": 0.9310882915534078,
+      "macro_recall": 0.9338985340809296
+    },
+    "history_summary": {
+      "history_best_epoch": 22,
+      "history_best_val_macro_f1": 0.9557154481990664,
+      "final_train_loss": 0.02362032978045487,
+      "final_val_loss": 0.12314627319664426,
+      "final_train_accuracy": 0.9954867827208252,
+      "final_val_accuracy": 0.9806576402321083,
+      "final_val_macro_f1": 0.9557154481990664,
+      "best_epoch": 22,
+      "best_val_loss": 0.12149574728844763,
+      "best_val_macro_f1": 0.9557154481990664,
+      "best_val_accuracy": 0.9806576402321083,
+      "epochs_ran": 30,
+      "stopped_early": true
+    }
+  }
+}
