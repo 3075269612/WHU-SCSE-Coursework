@@ -8,3 +8,9 @@ __pycache__/
 
 .DS_Store
 Thumbs.db
+
+# Cryptography coursework build/runtime outputs
+《密码学引论》实验大作业/sm4_gui
+《密码学引论》实验大作业/*.pem
+《密码学引论》实验大作业/*.enc
+《密码学引论》实验大作业/*.dec
