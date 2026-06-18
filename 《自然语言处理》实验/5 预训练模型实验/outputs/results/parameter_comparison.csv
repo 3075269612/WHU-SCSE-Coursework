@@ -1,0 +1,4 @@
+﻿name,d_model,n_layers,n_heads,d_ff,epochs,parameters,elapsed_seconds,first_perfect_epoch,loss,mlm_loss,nsp_loss,mlm_accuracy,nsp_accuracy
+baseline,128,2,4,256,120,308010,3.5731,17,0.000050,0.000000,0.000050,1.000000,1.000000
+shallow,128,1,4,256,120,175530,2.1579,21,0.000281,0.000000,0.000281,1.000000,1.000000
+narrow,64,2,4,128,120,80298,2.6158,26,0.000344,0.000003,0.000341,1.000000,1.000000

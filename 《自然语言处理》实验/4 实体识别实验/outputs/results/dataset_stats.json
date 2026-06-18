@@ -1,0 +1,22 @@
+{
+  "train": {
+    "sentences": 3821,
+    "tokens": 124099,
+    "avg_length": 32.48,
+    "labels": 10
+  },
+  "dev": {
+    "sentences": 463,
+    "tokens": 13890,
+    "avg_length": 30.0,
+    "labels": 10
+  },
+  "test": {
+    "sentences": 477,
+    "tokens": 15100,
+    "avg_length": 31.66,
+    "labels": 10
+  },
+  "vocab_size": 1906,
+  "pretrained_embedding_dim": 100
+}

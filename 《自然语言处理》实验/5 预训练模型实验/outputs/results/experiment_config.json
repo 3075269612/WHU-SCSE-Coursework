@@ -1,0 +1,44 @@
+[
+  {
+    "name": "baseline",
+    "d_model": 128,
+    "n_layers": 2,
+    "n_heads": 4,
+    "d_ff": 256,
+    "epochs": 120,
+    "learning_rate": 0.002,
+    "batch_size": 6,
+    "max_len": 30,
+    "max_pred": 5,
+    "dropout": 0.1,
+    "seed": 42
+  },
+  {
+    "name": "shallow",
+    "d_model": 128,
+    "n_layers": 1,
+    "n_heads": 4,
+    "d_ff": 256,
+    "epochs": 120,
+    "learning_rate": 0.002,
+    "batch_size": 6,
+    "max_len": 30,
+    "max_pred": 5,
+    "dropout": 0.1,
+    "seed": 42
+  },
+  {
+    "name": "narrow",
+    "d_model": 64,
+    "n_layers": 2,
+    "n_heads": 4,
+    "d_ff": 128,
+    "epochs": 120,
+    "learning_rate": 0.002,
+    "batch_size": 6,
+    "max_len": 30,
+    "max_pred": 5,
+    "dropout": 0.1,
+    "seed": 42
+  }
+]

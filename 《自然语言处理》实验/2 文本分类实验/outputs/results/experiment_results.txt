@@ -1,0 +1,67 @@
+文本分类实验结果汇总
+========================================
+运行设备: cpu
+类别: finance, realty, education, science
+数据规模: train=2000, dev=400, test=400, vocab=2131
+
+全部参数扫描结果:
+model	sweep	value	batch	embed	hidden	lr	dropout	dev_acc	test_acc
+BiLSTM	batch_size	8	8	128	128	0.001	0.3	0.8650	0.8525
+BiLSTM	batch_size	32	32	128	128	0.001	0.3	0.8375	0.8350
+BiLSTM	batch_size	64	64	128	128	0.001	0.3	0.8200	0.8200
+BiLSTM	batch_size	16	16	128	128	0.001	0.3	0.8400	0.8150
+BiLSTM	dropout	0.2	32	128	128	0.001	0.2	0.8300	0.8425
+BiLSTM	dropout	0.4	32	128	128	0.001	0.4	0.8175	0.8425
+BiLSTM	dropout	0.5	32	128	128	0.001	0.5	0.8300	0.8425
+BiLSTM	dropout	0.3	32	128	128	0.001	0.3	0.8375	0.8350
+BiLSTM	dropout	0.1	32	128	128	0.001	0.1	0.8350	0.8275
+BiLSTM	embedding_size	256	32	256	128	0.001	0.3	0.8625	0.8625
+BiLSTM	embedding_size	128	32	128	128	0.001	0.3	0.8375	0.8350
+BiLSTM	embedding_size	64	32	64	128	0.001	0.3	0.8225	0.8250
+BiLSTM	hidden_size	64	32	128	64	0.001	0.3	0.8425	0.8350
+BiLSTM	hidden_size	128	32	128	128	0.001	0.3	0.8375	0.8350
+BiLSTM	hidden_size	256	32	128	256	0.001	0.3	0.8275	0.8225
+BiLSTM	learning_rate	0.01	32	128	128	0.01	0.3	0.8750	0.8775
+BiLSTM	learning_rate	0.005	32	128	128	0.005	0.3	0.8825	0.8600
+BiLSTM	learning_rate	0.0005	32	128	128	0.0005	0.3	0.8075	0.8425
+BiLSTM	learning_rate	0.001	32	128	128	0.001	0.3	0.8375	0.8350
+BiLSTM	learning_rate	0.0001	32	128	128	0.0001	0.3	0.5175	0.5375
+TextCNN	batch_size	16	16	128	128	0.001	0.3	0.8650	0.8775
+TextCNN	batch_size	32	32	128	128	0.001	0.3	0.8575	0.8750
+TextCNN	batch_size	64	64	128	128	0.001	0.3	0.8600	0.8600
+TextCNN	batch_size	8	8	128	128	0.001	0.3	0.8700	0.8425
+TextCNN	dropout	0.2	32	128	128	0.001	0.2	0.8625	0.8800
+TextCNN	dropout	0.1	32	128	128	0.001	0.1	0.8775	0.8750
+TextCNN	dropout	0.3	32	128	128	0.001	0.3	0.8575	0.8750
+TextCNN	dropout	0.5	32	128	128	0.001	0.5	0.8800	0.8750
+TextCNN	dropout	0.4	32	128	128	0.001	0.4	0.8625	0.8725
+TextCNN	embedding_size	256	32	256	128	0.001	0.3	0.8950	0.8975
+TextCNN	embedding_size	128	32	128	128	0.001	0.3	0.8575	0.8750
+TextCNN	embedding_size	64	32	64	128	0.001	0.3	0.8575	0.8400
+TextCNN	hidden_size	256	32	128	256	0.001	0.3	0.9100	0.8800
+TextCNN	hidden_size	128	32	128	128	0.001	0.3	0.8575	0.8750
+TextCNN	hidden_size	64	32	128	64	0.001	0.3	0.8700	0.8675
+TextCNN	learning_rate	0.01	32	128	128	0.01	0.3	0.8725	0.8825
+TextCNN	learning_rate	0.005	32	128	128	0.005	0.3	0.8775	0.8775
+TextCNN	learning_rate	0.001	32	128	128	0.001	0.3	0.8575	0.8750
+TextCNN	learning_rate	0.0005	32	128	128	0.0005	0.3	0.8500	0.8575
+TextCNN	learning_rate	0.0001	32	128	128	0.0001	0.3	0.7800	0.7275
+
+最佳参数组合:
+模型=TextCNN, 扫描项=hidden_size, 取值=256, batch_size=32, embedding_size=128, hidden_size=256, learning_rate=0.001, dropout=0.3
+验证集准确率=0.9100, 测试集准确率=0.8800, 测试损失=0.3688
+
+最佳模型分类报告:
+              precision    recall  f1-score   support
+
+     finance     0.8830    0.8300    0.8557       100
+      realty     0.9355    0.8700    0.9016       100
+   education     0.8942    0.9300    0.9118       100
+     science     0.8165    0.8900    0.8517       100
+
+    accuracy                         0.8800       400
+   macro avg     0.8823    0.8800    0.8802       400
+weighted avg     0.8823    0.8800    0.8802       400
+
+最佳模型混淆矩阵:
+[[83, 4, 1, 12], [6, 87, 3, 4], [2, 1, 93, 4], [3, 1, 7, 89]]

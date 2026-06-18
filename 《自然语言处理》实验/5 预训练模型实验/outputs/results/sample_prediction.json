@@ -1,0 +1,42 @@
+{
+  "input_tokens": [
+    "[CLS]",
+    "hello",
+    "romeo",
+    "my",
+    "name",
+    "[MASK]",
+    "juliet",
+    "nice",
+    "to",
+    "meet",
+    "you",
+    "[SEP]",
+    "hello",
+    "how",
+    "are",
+    "[MASK]",
+    "[MASK]",
+    "am",
+    "romeo",
+    "[SEP]"
+  ],
+  "masked_targets": [
+    "i",
+    "you",
+    "is"
+  ],
+  "masked_predictions": [
+    "i",
+    "you",
+    "is"
+  ],
+  "is_next_target": false,
+  "is_next_prediction": false,
+  "attention_shape": [
+    1,
+    4,
+    30,
+    30
+  ]
+}

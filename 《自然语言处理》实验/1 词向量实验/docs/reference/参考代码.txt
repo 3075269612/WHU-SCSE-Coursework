@@ -1,0 +1,49 @@
+import jieba
+import numpy as np
+from gensim.models import word2vec
+from sklearn.decomposition import PCA
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+
+s = jieba.cut("他来到上海交通大学", cut_all=False)
+a = '/'.join(s)
+
+with open('实验一数据集.txt','r', encoding='utf8') as f:
+    data = f.read()
+    data_cut = jieba.cut(data)
+    result = ' '.join(data_cut)
+with open('1.txt', 'w', encoding='utf8') as f:
+    f.write(result)
+
+sentence = word2vec.LineSentence(r'1.txt')
+model = word2vec.Word2Vec(sentence, vector_size=100, window=5, min_count=1, workers=16)
+model.save(r'1.model')
+model.wv.save_word2vec_format(r'2.txt')
+r = model.wv.similarity('中国','中华')
+q = model.wv.most_similar(positive=['武汉'],topn=5)
+t = model.wv.most_similar(positive=['湖北','成都'],negative=['武汉'],topn=5)
+print(r)
+print(q)
+print(t)
+word_list = ['江苏', '南京', '成都', '四川', '湖北', '武汉', '河南', '郑州', '甘肃', '兰州', '湖南', '长沙', '陕西', '西安', '吉林', '长春', '广东', '广州', '浙江', '杭州']
+X = []
+for word in word_list:
+    X.append(model.wv[word])
+X = np.array(X)
+pca = PCA(n_components=2)
+newX = pca.fit_transform(X)     #等价于pca.fit(X) pca.transform(X)
+invX = pca.inverse_transform(newX) #将降维后的数据转换成原始数据
+
+
+print(pca.explained_variance_ratio_)
+plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['axes.unicode_minus']=False
+fig = plt.figure(figsize=(3,3))
+ax = plt.subplot(1,1,1)
+ax.scatter(x=newX[:, 0], y=newX[:, 1])
+for i in range(len(word_list)):
+    ax.text(newX[i][0]*1.01, newX[i][1]*1.01, word_list[i],
+            fontsize=10, color = "r", style = "normal", weight = "light",
+            verticalalignment='center', horizontalalignment='right',rotation=0) #
+plt.show()

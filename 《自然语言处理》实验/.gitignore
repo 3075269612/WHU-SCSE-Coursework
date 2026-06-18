@@ -1,0 +1,39 @@
+# Local environments and editor settings
+.venv/
+venv/
+.vscode/
+.idea/
+.codex/
+
+# Python caches and test/build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Local Word reports: keep locally, never publish
+**/docs/report/**/*.doc
+**/docs/report/**/*.docx
+**/docs/report/**/*.pdf
+
+# Reproducible generated artifacts
+**/data/processed/
+**/outputs/models/
+**/outputs/vectors/
+
+# Experiment 4 evaluates course-provided checkpoints, so these are inputs.
+!4 实体识别实验/outputs/models/
+!4 实体识别实验/outputs/models/*.pkl
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example

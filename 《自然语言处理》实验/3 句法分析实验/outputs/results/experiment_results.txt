@@ -1,0 +1,14 @@
+句法分析实验结果汇总
+========================================
+树库: THU
+训练句数: 1200, 开发句数: 400, epochs: 5, batch_size: 16
+
+配置	维度	词向量/初始化	优化器	命中词数	UAS	LAS	耗时
+random_100_adam	100	random	adam	0	0.6574	0.4979	11.05s
+random_300_adam	300	random	adam	0	0.6556	0.4991	12.86s
+giga_sample_100_adam	100	giga.100.txt.sample:exact	adam	83	0.6724	0.5031	11.00s
+charavg_100_adam	100	char_word2vec.dat:char_average	adam	2717	0.6080	0.4658	10.79s
+random_100_sgd	100	random	sgd	0	0.5818	0.4021	10.36s
+charavg_100_sgd	100	char_word2vec.dat:char_average	sgd	2717	0.5656	0.4216	10.07s
+
+最佳配置: giga_sample_100_adam, UAS=0.6724, LAS=0.5031, embedding=giga.100.txt.sample:exact, optimizer=adam

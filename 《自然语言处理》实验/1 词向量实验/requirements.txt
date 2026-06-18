@@ -1,0 +1,6 @@
+jieba
+gensim
+numpy
+scikit-learn
+matplotlib
+seaborn

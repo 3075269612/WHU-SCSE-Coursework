@@ -1,0 +1,7 @@
+name,embed_dim,embedding,optimizer,embedding_hits,dev_uas,dev_las,elapsed_seconds
+random_100_adam,100,random,adam,0,0.657413,0.497865,11.05
+random_300_adam,300,random,adam,0,0.655583,0.499085,12.86
+giga_sample_100_adam,100,giga.100.txt.sample:exact,adam,83,0.672361,0.503051,11.00
+charavg_100_adam,100,char_word2vec.dat:char_average,adam,2717,0.607993,0.465833,10.79
+random_100_sgd,100,random,sgd,0,0.581757,0.402074,10.36
+charavg_100_sgd,100,char_word2vec.dat:char_average,sgd,2717,0.565589,0.421599,10.07
