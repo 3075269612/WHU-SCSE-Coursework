@@ -1,3 +1,6 @@
 [submodule "《人工智能》课外实验（要求自学）"]
 	path = 《人工智能》课外实验（要求自学）
 	url = https://github.com/3075269612/Python-neural-network.git
+[submodule "第二学年小学期项目（数据爬取）"]
+	path = 第二学年小学期项目（数据爬取）
+	url = https://github.com/3075269612/xiaohongshu-crawler.git
