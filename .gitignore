@@ -15,3 +15,6 @@ Thumbs.db
 《密码学引论》实验大作业/*.enc
 《密码学引论》实验大作业/*.dec
 《密码学引论》实验大作业/*.docx
+
+# Local Windows environment artifacts
+%SystemDrive%/
